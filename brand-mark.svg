@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" role="img" aria-label="Skiload">
+  <defs>
+    <linearGradient id="bg" x1="10" x2="62" y1="8" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10202b" />
+      <stop offset="100%" stop-color="#071019" />
+    </linearGradient>
+    <linearGradient id="flow-top" x1="19" x2="55" y1="20" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f26d4e" />
+      <stop offset="100%" stop-color="#efb35f" />
+    </linearGradient>
+    <linearGradient id="flow-bottom" x1="18" x2="51" y1="54" y2="31" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3dc7b8" />
+      <stop offset="100%" stop-color="#198f85" />
+    </linearGradient>
+    <linearGradient id="spark" x1="48" x2="57" y1="14" y2="23" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fff4d9" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+  </defs>
+  <rect width="72" height="72" rx="22" fill="url(#bg)" />
+  <rect
+    x="3.5"
+    y="3.5"
+    width="65"
+    height="65"
+    rx="18.5"
+    fill="none"
+    stroke="#294654"
+    stroke-width="1.5"
+  />
+  <path
+    d="M51 20H32.5C26.7 20 22 24.7 22 30.5C22 36.3 26.7 41 32.5 41H39.5"
+    fill="none"
+    stroke="url(#flow-top)"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="8.5"
+  />
+  <path
+    d="M21 52H39.5C45.3 52 50 47.3 50 41.5C50 35.7 45.3 31 39.5 31H32"
+    fill="none"
+    stroke="url(#flow-bottom)"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="8.5"
+  />
+  <circle cx="54.5" cy="17.5" r="4.5" fill="url(#spark)" />
+</svg>

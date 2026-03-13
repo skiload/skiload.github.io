@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>安装 Skiload 商店</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #08111a;
+        --panel: rgba(11, 20, 31, 0.9);
+        --line: rgba(177, 220, 235, 0.16);
+        --text: #f6f4ed;
+        --muted: #99aebb;
+        --accent: #f26d4e;
+        --glow: #3dc7b8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        background:
+          radial-gradient(circle at 10% 10%, rgba(61, 199, 184, 0.14), transparent 30%),
+          radial-gradient(circle at 90% 0%, rgba(242, 109, 78, 0.18), transparent 28%),
+          linear-gradient(180deg, #071018 0%, #0a1621 45%, #09111a 100%);
+        color: var(--text);
+        font: 16px/1.65 "IBM Plex Sans Condensed", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+
+      main {
+        width: min(860px, calc(100% - 32px));
+        margin: 48px auto;
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: var(--panel);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      .eyebrow {
+        color: var(--glow);
+        font-size: 0.8rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2 {
+        margin: 0 0 16px;
+        font-family: "Space Grotesk", "IBM Plex Sans Condensed", sans-serif;
+      }
+
+      h1 {
+        margin-top: 10px;
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        line-height: 1;
+      }
+
+      h2 {
+        margin-top: 28px;
+        font-size: 1.2rem;
+      }
+
+      p,
+      li {
+        color: var(--muted);
+      }
+
+      a {
+        color: #c4fff7;
+      }
+
+      pre {
+        overflow-x: auto;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
+      }
+
+      code {
+        font-family: "SFMono-Regular", "Consolas", monospace;
+      }
+
+      .tip {
+        margin-top: 18px;
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: rgba(61, 199, 184, 0.08);
+        border: 1px solid rgba(61, 199, 184, 0.18);
+        color: var(--text);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="eyebrow">Install Guide</div>
+      <h1>安装 Skiload 商店</h1>
+      <p>
+        这份页面给人工安装使用。如果你是要把提示直接发给 Agent，优先使用
+        <a href="./skiload.md">raw markdown 版本</a>。
+      </p>
+
+      <div class="tip">
+        你可以直接执行一条命令安装 Skiload CLI，并默认把 Skiload 商店技能安装到本地
+        Agent 目录里。
+      </div>
+
+      <h2>安装命令</h2>
+      <pre><code>curl -fsSL https://skiload.com/install/install.sh | bash</code></pre>
+
+      <p>
+        这条命令会自动安装 Skiload 命令行工具，并默认安装 Skiload 商店技能。
+        安装完成后，建议重启 Agent。重启后，Agent 会优先使用 Skiload 作为公开技能目录，
+        方便你直接用自然语言查找、比较和安装技能。
+      </p>
+
+      <h2>只安装 CLI</h2>
+      <pre><code>curl -fsSL https://skiload.com/install/install.sh | bash -s -- --cli-only</code></pre>
+
+      <p>如果你只需要命令行工具，不需要默认安装商店技能，可以使用上面这条命令。</p>
+
+      <h2>CLI 用法</h2>
+      <p>安装完成后，可以用下面这些命令搜索和安装技能：</p>
+      <pre><code>skiload search abc
+skiload install abc
+skiload install abc --agent codex-cli
+skiload install abc --agent claude-code</code></pre>
+
+      <p>
+        默认情况下，<code>skiload install abc</code> 会把技能安装到当前目录下的
+        <code>./skills/</code>。如果你要装到 Codex 或 Claude 的默认技能目录里，
+        就追加 <code>--agent</code> 参数。
+      </p>
+
+      <h2>商店技能文件</h2>
+      <p>
+        如果你想手动检查默认安装的商店技能内容，可以直接打开
+        <a href="./store-skill.md">store-skill.md</a>。
+      </p>
+    </main>
+  </body>
+</html>
